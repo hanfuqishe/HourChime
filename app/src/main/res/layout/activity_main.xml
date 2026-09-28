@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    应用固定横屏（AndroidManifest 已锁定）。
+    倒计时大字占满全屏、居中，字号尽量大；
+    侧边栏是浮层，叠在大字之上，隐藏时整体平移到屏幕左侧之外。
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- 倒计时：屏幕正中央，字号自适应到尽可能大；液晶(7段)字体 DSEG7，SIL OFL 1.1 -->
+    <TextView
+        android:id="@+id/countdownTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:autoSizeMaxTextSize="400sp"
+        android:autoSizeMinTextSize="40sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/dseg7"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:padding="16dp"
+        android:text="0:00:00"
+        android:textColor="#FFFFFFFF" />
+
+    <!-- 侧边栏：浮层。默认可见，30 秒无操作后向左滑出可视区域 -->
+    <LinearLayout
+        android:id="@+id/controlsPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#D9000000"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <Button
+            android:id="@+id/settingsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="设置" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="选择倒计时时长"
+            android:textColor="#EEEEEE"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/durationSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown" />
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="开始倒计时" />
+
+        <Button
+            android:id="@+id/testSoundButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="测试声音" />
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="复位" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 半小时报时 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="半小时报时音频"
+            android:textColor="#EEEEEE" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/selectHalfBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择音频" />
+
+            <TextView
+                android:id="@+id/selectHalfName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="未选择"
+                android:paddingStart="12dp"
+                android:textColor="#DDDDDD"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/previewHalfBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="试听" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/halfVolume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="15"
+            android:progress="10" />
+
+        <!-- 剩10分钟报时 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="剩10分钟报时音频"
+            android:textColor="#EEEEEE"
+            android:layout_marginTop="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/selectTenMinBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择音频" />
+
+            <TextView
+                android:id="@+id/selectTenMinName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="未选择"
+                android:paddingStart="12dp"
+                android:textColor="#DDDDDD"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/previewTenMinBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="试听" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/tenMinVolume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="15"
+            android:progress="10" />
+
+        <!-- 时间到报时 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间到报时音频"
+            android:textColor="#EEEEEE"
+            android:layout_marginTop="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/selectEndBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择音频" />
+
+            <TextView
+                android:id="@+id/selectEndName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="未选择"
+                android:paddingStart="12dp"
+                android:textColor="#DDDDDD"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/previewEndBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="试听" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/endVolume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="15"
+            android:progress="10" />
+
+    </LinearLayout>
+</ScrollView>
