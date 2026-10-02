@@ -27,7 +27,8 @@
                 android:id="@+id/selectHalfBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="选择音频" />
+                android:text="选择音频"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/selectHalfName"
@@ -43,7 +44,8 @@
                 android:id="@+id/previewHalfBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="试听" />
+                android:text="试听"
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <SeekBar
@@ -72,7 +74,8 @@
                 android:id="@+id/selectTenMinBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="选择音频" />
+                android:text="选择音频"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/selectTenMinName"
@@ -88,7 +91,8 @@
                 android:id="@+id/previewTenMinBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="试听" />
+                android:text="试听"
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <SeekBar
@@ -117,7 +121,8 @@
                 android:id="@+id/selectEndBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="选择音频" />
+                android:text="选择音频"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/selectEndName"
@@ -133,7 +138,8 @@
                 android:id="@+id/previewEndBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="试听" />
+                android:text="试听"
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <SeekBar

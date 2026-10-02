@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- 开始/复位按钮的底色（配黑字，都是中间调，对比度够） -->
+    <color name="button_green">#FF66BB6A</color>
+    <color name="button_red">#FFEF5350</color>
+    <color name="button_amber">#FFDAA520</color>
 </resources>

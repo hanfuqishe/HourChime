@@ -2,7 +2,7 @@
 <!--
     应用固定横屏（AndroidManifest 已锁定）。
     倒计时大字占满全屏、居中，字号尽量大；
-    侧边栏是浮层，叠在大字之上，隐藏时整体平移到屏幕左侧之外。
+    侧边栏是浮层，叠在大字之上，隐藏时整体平移到屏幕右侧之外。
 -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/rootLayout"
@@ -26,12 +26,12 @@
         android:text="0:00:00"
         android:textColor="#FFFFFFFF" />
 
-    <!-- 侧边栏：浮层。默认可见，30 秒无操作后向左滑出可视区域 -->
+    <!-- 侧边栏：浮层。默认可见，30 秒无操作后向右滑出可视区域 -->
     <LinearLayout
         android:id="@+id/controlsPanel"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
+        android:layout_gravity="end"
         android:background="#D9000000"
         android:gravity="center_vertical"
         android:orientation="vertical"
@@ -41,7 +41,8 @@
             android:id="@+id/settingsBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="设置" />
+            android:text="设置"
+            android:textColor="@color/black" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -59,24 +60,30 @@
 
         <Button
             android:id="@+id/startButton"
+            android:backgroundTint="@color/button_green"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="开始倒计时" />
+            android:text="开始倒计时"
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/testSoundButton"
+            android:backgroundTint="@color/button_amber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="测试声音" />
+            android:text="测试声音"
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/resetButton"
+            android:backgroundTint="@color/button_red"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="复位" />
+            android:text="复位"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 

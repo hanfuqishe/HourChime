@@ -215,6 +215,10 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, TimerService::class.java)
                 intent.putExtra("selectedMinutes", selectedMinutes)
                 startForegroundService(intent)
+                // 倒计时一开始就把侧边栏收起来，让大字独占屏幕
+                hideControls()
+                // 顺手放一次“半小时报时”音，方便确认这一档的声音
+                SoundSettingsHelper.playSound(this, "uri_half", "volume_half")
             }
         }
 
@@ -226,6 +230,9 @@ class MainActivity : AppCompatActivity() {
 
             // 重置 UI
             countdownTextView?.text = formatTime(0L)
+
+            // 顺手放一次“时间到报时”音，方便确认这一档的声音
+            SoundSettingsHelper.playSound(this, "uri_end", "volume_end")
         }
 
         // 恢复上次设置的亮度；初始显示侧边栏并开始 30 秒无操作计时
@@ -311,13 +318,13 @@ class MainActivity : AppCompatActivity() {
         restartAutoHide()
     }
 
-    /** 30 秒无操作：侧边栏整体向左滑出可视区域 */
+    /** 30 秒无操作：侧边栏整体向右滑出可视区域 */
     private fun hideControls() {
         val panel = controlsPanel ?: return
         if (!controlsVisible) return
         controlsVisible = false
         panel.animate()
-            .translationX(-panel.width.toFloat())
+            .translationX(panel.width.toFloat())
             .setDuration(SIDEBAR_ANIM_MS)
             .start()
     }
@@ -333,7 +340,9 @@ class MainActivity : AppCompatActivity() {
      */
     private fun isTapInsideSidebar(x: Float): Boolean {
         val panel = controlsPanel ?: return false
-        return x >= panel.translationX && x <= panel.translationX + panel.width
+        // 用 left + translationX 算当前位置，侧边栏在左/右都适用
+        val left = panel.left + panel.translationX
+        return x >= left && x <= left + panel.width
     }
 
     /** 设置倒计时文字亮度（0.1~1.0）；持久化在 onPause 统一做 */
